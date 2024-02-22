@@ -35,6 +35,7 @@ module HasOrder
       options[:order] = order.to_sym
       options_key = options[:as].presence || :"#{order}"
 
+      self.order_configurations = order_configurations.dup
       order_configurations[options_key] = options
     end
 
